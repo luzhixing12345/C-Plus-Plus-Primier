@@ -1,4 +1,8 @@
-# makefile [video](https://www.bilibili.com/video/BV1B4411F7EK?from=search&seid=17350658045965248271&spm_id_from=333.337.0.0)
+# 第二章 C语言概述
+
+没啥好说的,写一个gcc的相关知识吧
+
+## makefile [video](https://www.bilibili.com/video/BV1B4411F7EK?from=search&seid=17350658045965248271&spm_id_from=333.337.0.0)
 
 已有文件，定义了宏，引用了标准库
 
