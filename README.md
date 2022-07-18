@@ -7,7 +7,7 @@
 ## 目录
 
 - [homework](./homework/) 包含书中所有的课后习题内容,分章节
-- [knowledge](.knowledge/) 包含C/C++基础/进阶知识,~~用于面试~~
+- [knowledge](./knowledge/) 包含C/C++基础/进阶知识,~~用于面试~~
 - [ex-knowledge](./ex-knowledge/) 包含一些扩展性/系统性的知识
 - [snippets](./snippets/) 包含实际开发中的一些常用的代码片段
 - [gcc-gdb](./gcc-gdb/) 包含gcc编译器和gdb调试器的使用技巧和命令行相关参数
