@@ -12,14 +12,15 @@
 
 |文件夹|内容|
 |:--:|:--|
-| [homework](./homework/) |参考书中一些有价值的课后习题内容|
-| [knowledge](./knowledge/) |C/C++基础/进阶知识,~~用于面试~~|
-| [ex-knowledge](./ex-knowledge/) |一些扩展性/系统性的知识|
-| [snippets](./snippets/) |实际开发中的一些常用的代码片段|
-| [gcc-gdb](./gcc-gdb/) |gcc编译器和gdb调试器的使用技巧和命令行相关参数|
-| [tools](./tools/) |C/C++相关工具的学习和使用|
-| [specification](./specification/) |C++代码规范|
-| [experience](./experience/) |一些~~血和泪的~~debug经验|
+|[homework](./homework/)|参考书中一些有价值的课后习题内容|
+|[knowledge](./knowledge/)|C/C++基础/进阶知识,~~用于面试~~|
+|[ex-knowledge](./ex-knowledge/)|一些扩展性/系统性的知识|
+|[snippets](./snippets/)|实际开发中的一些常用的代码片段|
+|[library](./library/)|优质开源C++库/轮子的使用方法|
+|[gcc-gdb](./gcc-gdb/)|gcc编译器和gdb调试器的使用技巧和命令行相关参数|
+|[tools](./tools/)|C/C++相关工具的学习和使用|
+|[specification](./specification/)|C++代码规范|
+|[experience](./experience/)|一些~~血和泪的~~debug经验|
 
 ## 相关电子书籍下载
 
