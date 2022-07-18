@@ -1,5 +1,3 @@
-# 第一章 初识C语言
-
 ## GNU
 
 GNU项目始于1987,是一个开发大量免费的UNIX软件的集合, GNU的意思是GNU's Not UNIX
@@ -33,34 +31,113 @@ gcc -std=c99 inform.c
 gcc -std=c11 inform.c
 ```
 
-## 复习题
+## makefile [video](https://www.bilibili.com/video/BV1B4411F7EK?from=search&seid=17350658045965248271&spm_id_from=333.337.0.0)
 
-1. 对于编程而言,可移植性意味着什么?
+已有文件，定义了宏，引用了标准库
 
-   完美的可移植程序是其源代码无需修改就能在不同的计算机系统中成功编译的程序
+```c
+#include<stdio.h>
+#define NAME "LuZhixing"
+#define StudentID 2019300003075
 
-2. 解释源代码文件,目标代码文件和可执行文件有什么区别?
+void f2(){
+    printf("this is function f2 in f2.c\n");
+    printf("my name is %s and my student ID is %ld",NAME,StudentID);
+    return;
+}
+```
 
-   源代码文件包含程序员使用的任何编程语言编写的代码
+## gcc 指令
 
-   目标代码文件包含机器语言代码,他不是完成的程序代码
+- `gcc -E f2.c -o f2.i`：第一步预处理，把`.h .c`展开形成一个文件,宏定义替换，可以看到我定义的两个宏都已被替换
 
-   可执行文件包含组成可执行程序的完整机器语言代码
+    ```c
+    # 6 "f2.c"
+    void f2(){
+        printf("this is function f2 in f2.c");
+        printf("my name is %s and my student ID is %ld","LuZhixing",2019300003075);
+        return;
+    }
+    ```
 
-3. 编程的7个主要步骤是什么?
+- `gcc -S f2.i -o f2.s`:将预编译文件转成汇编语言，`f2.i`中多余的引用不会被汇编
+- `gcc -c f2.s -o f2.o`:将汇编语言转变为机器码，二进制文件
+- `gcc f2.o -o f2`:生成可执行文件,当然本身`f2`不能执行因为没有`main`作为主函数入口，可以使用`gcc -nostartfiles -e f2 f2.o -o f2`更改函数入口为`f2()`函数，但是这里不能使用`return`作为函数返回值，会出现段错误，应该使用`exit(0)`退出进程
 
-   1. 定义程序目标
-   2. 设计程序
-   3. 编写程序
-   4. 编译程序
-   5. 运行程序
-   6. 测试和调试程序
-   7. 维护和修改程序
+## makefile 基本用法
 
-4. 编译器的任务是什么?
+- `CC:= gcc`： 固定变量，不可更改，调用使用`$(CC)`
+- 反过来写，类似于栈
+- 格式为
 
-   编译器把源代码翻译成等价的机器语言代码(目标代码)
+  ```shell
+  目标文件:使用文件
+      $(CC) -c f1.c -o f1.o
+  ```
 
-5. 链接器的任务是什么?
+- `.PHONY:`执行副任务
+- `make -f unixmake.mak` 执行某一个文件，默认执行`makefile`，不区分大小写
 
-   链接器把编译器翻译好的源代码以及库代码和启动代码组合起来,生成一个可执行程序
+## printf
+
+```c
+# include <stdio.h>
+
+int main() {
+    int x = 100;
+    printf("dec = %d; octal = %o; hex = %x\n", x, x, x);
+    printf("dec = %d; octal = %#o; hex = %#x\n", x, x, x);
+    return 0;
+}
+```
+
+```txt
+dec = 100; octal = 144; hex = 64
+dec = 100; octal = 0144; hex = 0x64
+```
+
+关于printf的详细参数可以参考[C基础——使用printf打印各种数据类型的方式](https://blog.csdn.net/qq_37596943/article/details/103611607)
+
+printf scanf都是多参数,
+
+## 蜂鸣
+
+我的电脑上printf("\a")并不有效,可以使用 `_beep`替代
+
+```c
+#include <stdio.h>
+
+int main() {
+    // beep a tone
+    for (int i = 0; i < 8; i++) {
+        _beep(1000 + i*200, 500);
+    }
+    return 0;
+}
+```
+
+## 退格 \b
+
+```c
+int main() {
+    // use \b to backspace
+    printf("$___\b\b\b");
+    printf("abc");
+    return 0;
+}
+```
+
+## 缓冲区buffer
+
+最初,printf把输出发送到一个叫做缓冲区的中间存储区域,然后缓冲区中的内容再不断被发送到屏幕上.
+
+C标准明确规定了何时把缓冲区中的内容发送到屏幕:
+
+- 缓冲区满
+- 遇到换行字符
+- 需要输入
+
+> 从缓冲区把数据发送到屏幕或文件被成为刷新缓冲区(fflush)
+
+
+## 结语

@@ -1,17 +1,20 @@
-# C Primer Plus learning
+# C-Plus-Plus-Learning
 
-写了一段时间的python之后渐渐感到有些依赖它解决很多问题了,我并不否认python是一门很适合新手,功能库十分强大的语言,但它并不能让我深入的理解一些东西,简洁化的语法反而让我的c++技术有些退步
+## 简介
 
-希望可以认真的学习一下c++这门语言,使用的书是C Primer Plus(第六版)
-
-**这个仓库并不是学习笔记,仅包含课后作业和一些笔者的思考**.由于笔者具有一定的C++基础,一二章的内容就直接跳过了,作业题从第三章开始.(我觉得毫无意义的题目也会跳过)
-
-所有代码为笔者独立实现,未参考其他代码.
-
-由于笔者水平有限,代码难免疏漏,内容思考也难免挂一漏万,仅供参考.
+本仓库是笔者个人的C++学习笔记和代码仓库
 
 ## 目录
 
-## 思考
+- [homework](./homework/) 包含书中所有的课后习题内容,分章节
+- [knowledge](.knowledge/) 包含C/C++基础/进阶知识,~~用于面试~~
+- [ex-knowledge](./ex-knowledge/) 包含一些扩展性/系统性的知识
+- [snippets](./snippets/) 包含实际开发中的一些常用的代码片段
+- [gcc-gdb](./gcc-gdb/) 包含gcc编译器和gdb调试器的使用技巧和命令行相关参数
+- [tools](./tools/) 包含C/C++相关工具的学习和使用
 
-## 结语
+> 详见各目录README
+
+## 相关电子书籍下载
+
+- [C++ Primier](https://github.com/luzhixing12345/C-Plus-Plus-Primier/releases/download/v0.0.1/C++.Primer.5.2013.pdf)
